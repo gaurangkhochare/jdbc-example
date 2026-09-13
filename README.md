@@ -10,7 +10,7 @@ A Java Swing desktop application for managing student records in MySQL. The appl
 - Delete a student by roll number
 - Clear the form and close the application
 
-The **Update** button is present in the interface but is not implemented yet.
+The **Update** button is present in the interface but is not implemented yet. I *might* implement it someday.
 
 ## Requirements
 
