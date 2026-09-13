@@ -55,8 +55,8 @@ The connection is currently defined in `src/StudentDatabase.java`:
 
 ```java
 String url = "jdbc:mysql://localhost:3306/college";
-String username = "root";
-String password = "gaurang";
+String username = "<username>";
+String password = "<password>";
 ```
 
 Before running the application, change `username` and `password` to match the MySQL account on your computer. If MySQL is running on another host or port, update the JDBC URL as well.

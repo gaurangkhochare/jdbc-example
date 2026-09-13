@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class StudentDatabase {
 
     static Connection con;
-    String url = "jdbc:mysql://localhost:3306/college", username = "root", password = "gaurang";
+    String url = "jdbc:mysql://localhost:3306/college", username = "<username>", password = "<password>";
 
     String insertQuery = "INSERT INTO student_details (rollno, student_name, department, semester, mobileno, course)"
             + " VALUES (?, ?, ?, ?, ?, ?);";
