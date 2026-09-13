@@ -1,3 +1,4 @@
+
 import java.sql.*;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
@@ -18,11 +19,11 @@ public class StudentDatabase {
     String deleteQuery = "DELETE FROM student_details WHERE rollno = ?;";
 
     String searchQuery = "SELECT * FROM student_details WHERE rollno = ?;";
-    
+
     /**
      * Creates new Connection with MySQL Server
-     * 
-     * @throws SQLException 
+     *
+     * @throws SQLException
      */
     public StudentDatabase() throws SQLException {
         con = DriverManager.getConnection(url, username, password);
@@ -30,13 +31,13 @@ public class StudentDatabase {
 
     /**
      * Inserts data of new student in the database table
-     * 
+     *
      * @param rollno Roll Number
      * @param name Student's Name
      * @param deparment
      * @param semester
      * @param mobileNo
-     * @param course 
+     * @param course
      */
     public void addStudent(String rollno, String name, String deparment, int semester, String mobileNo, String course) {
         try (PreparedStatement ps = con.prepareStatement(insertQuery)) {
@@ -55,7 +56,7 @@ public class StudentDatabase {
 
     /**
      * Deletes data of student having roll number 'rollno'
-     * 
+     *
      * @param rollno Student's Roll Number
      */
     public void deleteStudent(String rollno) {
@@ -69,7 +70,7 @@ public class StudentDatabase {
 
     /**
      * Get data of student of given roll number
-     * 
+     *
      * @param rollno Student's Roll Number
      * @return details of student in form of Java Swing DefaultTableModel
      */
@@ -79,62 +80,63 @@ public class StudentDatabase {
 
             ResultSet rs = ps.executeQuery();
             int cols = rs.getMetaData().getColumnCount();
-            
+
             Vector<String> columns = new Vector<String>();
-            for (int i = 1; i <= cols; i++)
+            for (int i = 1; i <= cols; i++) {
                 columns.add(rs.getMetaData().getColumnName(i));
-            
+            }
+
             Vector<Vector<Object>> data = new Vector<>();
-            while(rs.next()) {
+            while (rs.next()) {
                 Vector<Object> rows = new Vector<>();
                 for (int i = 1; i <= cols; i++) {
                     rows.add(rs.getObject(i));
                 }
-                
+
                 data.add(rows);
             }
-            
+
             return new DefaultTableModel(data, columns);
-            
+
         } catch (SQLException e) {
             System.err.println(e);
         }
-        
+
         return null;
     }
 
     /**
      * Get data of all students
-     * 
+     *
      * @return details of all students in form of Java Swing DefaultTableModel
      */
     public DefaultTableModel getAllData() {
         String query = "SELECT * FROM student_details;";
-        
+
         try (PreparedStatement ps = con.prepareStatement(query)) {
             ResultSet rs = ps.executeQuery();
             int cols = rs.getMetaData().getColumnCount();
-            
+
             Vector<String> columns = new Vector<>();
             for (int i = 1; i <= cols; i++) {
                 columns.add(rs.getMetaData().getColumnName(i));
             }
-            
+
             Vector<Vector<Object>> data = new Vector<>();
-            while(rs.next()) {
+            while (rs.next()) {
                 Vector<Object> rows = new Vector<>();
                 for (int i = 1; i <= cols; i++) {
                     rows.add(rs.getObject(i));
                 }
-                
+
                 data.add(rows);
             }
-            
+
             return new DefaultTableModel(data, columns);
         } catch (SQLException e) {
             System.err.println(e);
         }
-        
+
         return null;
     }
 
