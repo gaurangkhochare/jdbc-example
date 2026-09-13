@@ -1,22 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package com.gaurang.view;
-
 import java.sql.*;
-import com.gaurang.model.StudentDatabase;
 import javax.swing.JOptionPane;
 
 /**
- * NetBeans Form Editor is awesome, it makes GUI development in Java so much easier.
+ * NetBeans Form Editor is awesome, it makes GUI development in Java so much
+ * easier.
+ *
  * @author Gaurang Khochare
  */
 public class StudentManagerGUI extends javax.swing.JFrame {
-    
+
     StudentDatabase db;
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StudentManagerGUI.class.getName());
 
     /**
      * Creates new form StudentManagerGUI
@@ -25,7 +18,7 @@ public class StudentManagerGUI extends javax.swing.JFrame {
         try {
             this.db = new StudentDatabase();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
         }
         setSize(800, 600);
         setTitle("Student Record Management System");
@@ -85,56 +78,39 @@ public class StudentManagerGUI extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Roll Number:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Department");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Mobile Number:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Semester:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Course:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Student Name:");
 
-        mobileNo.setBackground(new java.awt.Color(255, 255, 255));
         mobileNo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        mobileNo.setForeground(new java.awt.Color(0, 0, 0));
-        mobileNo.addActionListener(this::mobileNoActionPerformed);
 
-        studentName.setBackground(new java.awt.Color(255, 255, 255));
         studentName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        studentName.setForeground(new java.awt.Color(0, 0, 0));
 
-        deptComboBox.setBackground(new java.awt.Color(255, 255, 255));
         deptComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        deptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computer Engineering", "Information Technology", "Biomedical Engineering" }));
+        deptComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fist Year Engineering", "Information Technology", "Computer Engineering", "Biomedical Engineering", "Electronics Engineering" }));
 
-        semComboBox.setBackground(new java.awt.Color(255, 255, 255));
         semComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         semComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8" }));
 
-        courseComboBox.setBackground(new java.awt.Color(255, 255, 255));
         courseComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        courseComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        courseComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INFT", "CMPN", "EXTC", "EXCS", "BIOM" }));
 
-        rollNo.setBackground(new java.awt.Color(255, 255, 255));
         rollNo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rollNo.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -201,28 +177,10 @@ public class StudentManagerGUI extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
 
-        studentRecord.setBackground(new java.awt.Color(255, 255, 255));
-        studentRecord.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        studentRecord.setForeground(new java.awt.Color(0, 0, 0));
         studentRecord.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Roll No.", "Student Name", "Department", "Semester", "Moblie No.", "Course"
@@ -424,12 +382,14 @@ public class StudentManagerGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        try {
-            db.deleteStudent(rollNo.getText());
-            JOptionPane.showMessageDialog(this, "Student info deleted successfully.");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
+
+        String rollNumber = rollNo.getText().toUpperCase();
+        String course = (String) courseComboBox.getSelectedItem();
+        int semester = Integer.parseInt((String) semComboBox.getSelectedItem());
+
+        db.deleteStudent(rollNumber);
+        JOptionPane.showMessageDialog(this, "Student info deleted successfully.");
+
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
@@ -442,32 +402,26 @@ public class StudentManagerGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void viewAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllButtonActionPerformed
-        // TODO add your handling code here:
+        studentRecord.setModel(db.getAllData());
     }//GEN-LAST:event_viewAllButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         String name = studentName.getText(),
-               rollNumber = rollNo.getText().toUpperCase(),
-               mobileNumber = mobileNo.getText(),
-               department = (String) deptComboBox.getSelectedItem(),
-               course = (String) courseComboBox.getSelectedItem(),
-               semester = (String) semComboBox.getSelectedItem();
-        
-        try {
-            db.addStudent(rollNumber, name, department, semester, mobileNumber, course);
-            JOptionPane.showMessageDialog(this, "Succesfully added Student info to the database.");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, e);
-        }
+                mobileNumber = mobileNo.getText(),
+                department = (String) deptComboBox.getSelectedItem(),
+                course = (String) courseComboBox.getSelectedItem();
+
+        String rollNumber = rollNo.getText().toUpperCase();
+        int semester = Integer.parseInt((String) semComboBox.getSelectedItem());
+
+        db.addStudent(rollNumber, name, department, semester, mobileNumber, course);
+        JOptionPane.showMessageDialog(this, "Succesfully added Student info to the database.");
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        // TODO add your handling code here:
+        String rollno = rollNo.getText().toUpperCase();
+        studentRecord.setModel(db.getStudentData(rollno));
     }//GEN-LAST:event_searchButtonActionPerformed
-
-    private void mobileNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobileNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mobileNoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
