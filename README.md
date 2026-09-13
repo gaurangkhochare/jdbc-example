@@ -1,6 +1,6 @@
 # Student Record Management System
 
-A Java Swing desktop application for managing student records in MySQL. The application uses JDBC and provides controls for adding, searching, viewing, and deleting student records. Made for a college assignment.
+A Java Swing desktop application for managing student records in MySQL. The application uses JDBC and provides controls for adding, searching, viewing, and deleting student records.
 
 ## Features
 
